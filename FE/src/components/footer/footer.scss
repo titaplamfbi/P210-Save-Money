@@ -1,0 +1,23 @@
+@import "../../variable.scss";
+.footer {
+  padding: 40px 0;
+
+  &-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &-menu {
+    display: flex;
+  }
+  &-item {
+    margin-right: 60px;
+    &__link {
+      color: $text-color;
+      &:hover {
+        color: $pink-color;
+        transition: all 0.3s linear;
+      }
+    }
+  }
+}

@@ -1,0 +1,126 @@
+@import "../../../variable.scss";
+.bkg-purple {
+  background-color: $purple-color;
+}
+.login-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 140px 0;
+  &__img {
+    display: flex;
+    flex-direction: column;
+  }
+  &__title {
+    margin-top: 60px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 1.4;
+    color: #fff;
+    span {
+      display: block;
+    }
+  }
+}
+
+.login-img {
+  //   display: block;
+  width: 450px;
+  height: auto;
+  transform: rotate(-20deg);
+}
+.login__title {
+  color: #fff;
+  font-size: 64px;
+  text-align: center;
+}
+.login__desc {
+  color: #fff;
+  margin: 60px 0 40px;
+}
+.info-input-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.remember-box {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0 20px;
+}
+.forgot-link {
+  color: $green-color;
+}
+.sign-up-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  margin-top: 10px;
+  a {
+    color: $green-color;
+  }
+}
+///////////////////////////////////////////custom checkbox/////////////////////////////
+.styled-checkbox {
+  position: absolute; // take it out of document flow
+  opacity: 0; // hide it
+
+  & + label {
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  // Box.
+  & + label:before {
+    content: "";
+    margin-right: 4px;
+    display: inline-block;
+    vertical-align: text-top;
+    width: 12px;
+    height: 12px;
+    background: white;
+    margin-top: 2px;
+  }
+
+  // Box hover
+  &:hover + label:before {
+    transition: all 0.2s linear;
+    background: $pink-color;
+  }
+
+  // Box checked
+  &:checked + label:before {
+    background: $pink-color;
+  }
+
+  // Disabled state label.
+  &:disabled + label {
+    color: #b8b8b8;
+    cursor: auto;
+  }
+
+  // Disabled box.
+  &:disabled + label:before {
+    box-shadow: none;
+    background: #ddd;
+  }
+
+  // Checkmark. Could be replaced with an image
+  &:checked + label:after {
+    content: "";
+    position: absolute;
+    left: 1px;
+    top: 6px;
+    background: white;
+    width: 2px;
+    height: 2px;
+    box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white,
+      4px -6px 0 white, 4px -8px 0 white;
+    transform: rotate(45deg);
+  }
+}

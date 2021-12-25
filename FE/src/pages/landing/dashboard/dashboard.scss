@@ -1,0 +1,68 @@
+@import "../../../variable.scss";
+.dashboard {
+  padding: 80px;
+  &-flex {
+    display: flex;
+    // align-items: center;
+  }
+  &__img {
+    max-width: 675px;
+    height: auto;
+    margin-right: 40px;
+  }
+  &__title {
+    font-size: 52px;
+    color: $title-color;
+    font-weight: 600;
+    line-height: 1.2;
+    span {
+      display: block;
+    }
+  }
+  &__des {
+    color: $description-text-color;
+    line-height: 1.4;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    span {
+      display: block;
+    }
+  }
+}
+.dashboard-box-des {
+  &-info {
+    display: flex;
+  }
+}
+.dashboard-box-des-info {
+  margin-bottom: 30px;
+}
+.box-des-info__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  width: 70px;
+  height: 70px;
+
+  color: $pink-main;
+  border: 2px solid $pink-main;
+  border-radius: 50%;
+  margin-right: 30px;
+}
+.box-des-info-text {
+  .box-des-info-title {
+    color: $pink-main;
+    font-weight: 600;
+    font-size: 20px;
+    padding-bottom: 10px;
+  }
+  .box-des-info-desc {
+    font-size: 15px;
+    line-height: 1.4;
+    color: $description-text-color;
+    span {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.login-page {
+  background-color: #d2d6de;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.login-logo {
+  h4 {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+}
+.login-box-body {
+  background-color: #fff;
+  padding: 30px;
+}
+.login-box-msg {
+  padding: 20px 0;
+  font-size: 20px;
+}
+.form-login {
+  input {
+    width: 100%;
+    margin-bottom: 6px;
+    padding: 16px 14px;
+  }
+}

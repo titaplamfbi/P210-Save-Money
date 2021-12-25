@@ -1,0 +1,95 @@
+@import "../../../../variable.scss";
+.register-img {
+  //   display: block;
+  width: 450px;
+  height: auto;
+}
+.register-box {
+  padding-left: 40px;
+}
+.flex-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .date-input {
+    padding: 14px 18px;
+  }
+}
+.register-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  margin-top: 10px;
+
+  a {
+    margin-left: 20px;
+    color: $green-color;
+  }
+}
+.address-input {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.gender-box {
+  display: flex;
+  align-items: center;
+  color: white;
+  p {
+    margin-right: 10px;
+  }
+  #female,
+  #male {
+    margin-right: 4px;
+  }
+  .male {
+    margin-right: 10px;
+  }
+  .male,
+  .female {
+    cursor: pointer;
+  }
+}
+#email-input {
+  margin-top: 0;
+}
+.date-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  &-text {
+    color: #fff;
+    margin-right: 28px;
+  }
+}
+
+.date-input {
+  background-color: #1e292e;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  display: block;
+}
+.nationlity {
+  text-transform: uppercase;
+  color: #fff;
+  margin-right: 20px;
+}
+.MuiFormControl-root.MuiTextField-root.textfield.css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+  margin-top: 20px;
+}
+.box-from-admin {
+  padding: 20px;
+  width: 650px;
+}
+.btnAddAdmin {
+  color: #fff !important;
+  margin-left: 60px !important;
+  background-color: #6998ab !important;
+  width: 60px;
+  height: 40px;
+  &:hover {
+    background-color: green !important;
+  }
+}

@@ -1,0 +1,119 @@
+@import "./variable";
+@import "./reset";
+
+.main {
+  overflow-x: hidden;
+}
+.content-wrapper {
+  overflow-x: scroll;
+}
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.container {
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.btn {
+  padding: 14px 40px;
+  color: #fff8f8;
+  background-color: $pink-color;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s linear;
+  &:hover {
+    background-color: $pink-main;
+    color: white;
+  }
+  &-login {
+    margin-left: 20px;
+    display: block;
+  }
+  &-sub {
+    // display: ;
+    margin-left: 60px;
+  }
+  &-sb-login {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+  }
+  &-sdt {
+    border: none;
+    border-radius: 10px;
+  }
+  &-back {
+    background-color: $green-color;
+    margin-right: 10px;
+    &:hover {
+      background-color: #2fd88a;
+    }
+  }
+  &-send {
+    cursor: pointer;
+    padding: 16px 40px;
+    background-color: $green-color;
+    color: white;
+    margin-top: 20px;
+    width: 100%;
+    border-radius: 10px;
+    font-weight: bold;
+  }
+  &-change {
+    text-align: center;
+    cursor: pointer;
+    padding: 16px 40px;
+    background-color: $green-color;
+    color: white;
+    margin-top: 20px;
+
+    border-radius: 20px;
+    font-weight: bold;
+  }
+}
+.input-box {
+  background-color: #1e292e;
+  border: none;
+  outline: none;
+  min-width: 300px;
+  padding: 16px 18px;
+  border-radius: 10px;
+  display: block;
+  margin-top: 20px;
+}
+.footer-bkg {
+  background-color: $footer-bkg;
+}
+.text-pink {
+  color: $pink-color;
+}
+.text-white {
+  color: #fff !important;
+  font-weight: 400;
+}
+.text-green {
+  color: $green-color !important;
+}
+.bkg-green {
+  background-color: $green-color !important;
+}
+.mt-0 {
+  margin-top: 0;
+}
+.text-center {
+  text-align: center;
+}
+.mr-20 {
+  margin-right: 20px;
+}
+.show {
+  display: block;
+}
+.ml-20 {
+  margin-left: 20px;
+}
+.mt-10 {
+  margin-top: 10px;
+}

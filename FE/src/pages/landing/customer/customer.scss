@@ -1,0 +1,50 @@
+@import "../../../variable.scss";
+.customer {
+  padding: 120px 0;
+  &-content {
+    max-width: 650px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  &-title {
+    font-size: 80px;
+    color: $title-color;
+    span {
+      color: $pink-main;
+    }
+  }
+  &-des {
+    color: $description-text-color;
+    line-height: 1.4;
+    padding-top: 40px;
+    padding-bottom: 80px;
+  }
+  &-number {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.customer-number {
+  padding: 80px 0;
+  &-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+
+    &--title {
+      font-size: 36px;
+      font-weight: medium;
+      color: $description-text-color;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+    }
+    &-number {
+      font-size: 28px;
+      padding-top: 30px;
+      color: $pink-color;
+    }
+  }
+}

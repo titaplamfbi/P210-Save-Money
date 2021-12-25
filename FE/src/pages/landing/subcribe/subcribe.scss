@@ -1,0 +1,43 @@
+@import "../../../variable.scss";
+.subcribe {
+  background: #48df99;
+  &-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &-box-left {
+    display: flex;
+    align-items: center;
+  }
+  &-img {
+    max-width: 650px;
+    max-height: 640px;
+  }
+}
+.box-text-desc {
+  line-height: 1.4;
+  font-size: 18px;
+  margin-bottom: 28px;
+  padding-right: 75px;
+  white-space: nowrap;
+  color: $text-color;
+  span {
+    display: block;
+  }
+}
+.subcribe-box-btn {
+  &__title {
+    font-size: 60px;
+    font-weight: bold;
+    color: $title-color;
+    margin-bottom: 40px;
+    white-space: nowrap;
+    border-left: 4px solid gray;
+    padding-left: 60px;
+    line-height: 1.2;
+    span {
+      display: block;
+    }
+  }
+}
