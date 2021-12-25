@@ -16,14 +16,16 @@ import Footer from "../../components/footer";
 Profit.propTypes = {};
 
 function Profit(props) {
-    const [savings, setSavings] = useState([]);
+  const [savings, setSavings] = useState([]);
 
   const url = "http://localhost:5000/saving/getallsavingbyuserid";
 
-  const currentUser = JSON.parse(localStorage.getItem('user'));
+  const currentUser = JSON.parse(localStorage.getItem("user"));
   const userID = currentUser._id;
   const fetchAllSavings = async () => {
-    const response = await axios.post(url, {userID}).catch((err) => console.log(err));
+    const response = await axios
+      .post(url, { userID })
+      .catch((err) => console.log(err));
     if (response) {
       const savings = response.data;
       setSavings(savings);
@@ -84,95 +86,108 @@ function Profit(props) {
   useEffect(() => {
     fetchAllSavings();
   }, []);
-  const changesendmoney = async function (){
-
+  const changesendmoney = async function () {
     document.location.href = "/send";
-  }
-    return (
-        <div class="container">
-        <Header />
+  };
+  return (
+    <>
+      <Header />
+      <div className="container">
         <div class="profit-content">
           <div class="deposit-box">
             <p class="deposit-title">Your bank</p>
-            <p class="deposit-text">Account number <span>56781231903812</span></p>
-            <p class="deposit-text">Curent balance <span>5,109 đ</span></p>
+            <p class="deposit-text">
+              Account number <span>56781231903812</span>
+            </p>
+            <p class="deposit-text">
+              Curent balance <span>5,109 đ</span>
+            </p>
             <div class="button-deposit-box">
               <button class="deposit-btn btn bkg-green">Add Money</button>
             </div>
-            <p class="deposit-text">Money savings <span>2,378,589,000 đ</span></p>
+            <p class="deposit-text">
+              Money savings <span>2,378,589,000 đ</span>
+            </p>
             <div class="button-deposit-box">
-              <button class="deposit-btn btn bkg-green" onClick={changesendmoney}>Send Money</button>
+              <button
+                class="deposit-btn btn bkg-green"
+                onClick={changesendmoney}
+              >
+                Send Money
+              </button>
             </div>
           </div>
         </div>
         <div class="profit-table">
-          <div className="content-wrapper">
-        <div style={{ padding: "10px" }}>
-          <div>
-            <GlobalFilter
-              preGlobalFilteredRows={preGlobalFilteredRows}
-              setGlobalFilter={setGlobalFilter}
-              globalFilter={state.globalFilter}
-            />
-          </div>
-          <table className={classes.table} {...getTableProps()}>
-            <thead className={classes.thead}>
-              {
-                // Loop over the header rows
-                headerGroups.map((headerGroup) => (
-                  // Apply the header row props
-                  <tr
-                    className={classes.trHead}
-                    {...headerGroup.getHeaderGroupProps()}
-                  >
-                    {
-                      // Loop over the headers in each row
-                      headerGroup.headers.map((column) => (
-                        // Apply the header cell props
-                        <th
-                          className={classes.th}
-                          {...column.getHeaderProps(
-                            column.getSortByToggleProps()
-                          )}
-                        >
-                          {
-                            // Render the header
-                            column.render("Header")
-                          }
-                          {column.isSorted
-                            ? column.isSortedDesc
-                              ? " ▼"
-                              : " ▲"
-                            : ""}
-                        </th>
-                      ))
-                    }
-                  </tr>
-                ))
-              }
-            </thead>
-            {/* Apply the table body props */}
-            <tbody className={classes.tbody} {...getTableBodyProps()}>
-              {
-                // Loop over the table rows
-                rows.map((row) => {
-                  // Prepare the row for display
-                  prepareRow(row);
-                  return (
-                    <tr className={classes.trBody} {...row.getRowProps()}>
-                      {row.cells.map((cell) => (
-                        <td className={classes.td} {...cell.getCellProps()}>
-                          {cell.render("Cell")}
-                        </td>
-                      ))}
+          <div style={{ padding: "10px" }}>
+            <div>
+              <GlobalFilter
+                preGlobalFilteredRows={preGlobalFilteredRows}
+                setGlobalFilter={setGlobalFilter}
+                globalFilter={state.globalFilter}
+              />
+            </div>
+            <table className={classes.table} {...getTableProps()}>
+              <thead className={classes.thead}>
+                {
+                  // Loop over the header rows
+                  headerGroups.map((headerGroup) => (
+                    // Apply the header row props
+                    <tr
+                      className={classes.trHead}
+                      {...headerGroup.getHeaderGroupProps()}
+                    >
+                      {
+                        // Loop over the headers in each row
+                        headerGroup.headers.map((column) => (
+                          // Apply the header cell props
+                          <th
+                            className={classes.th}
+                            {...column.getHeaderProps(
+                              column.getSortByToggleProps()
+                            )}
+                          >
+                            {
+                              // Render the header
+                              column.render("Header")
+                            }
+                            {column.isSorted
+                              ? column.isSortedDesc
+                                ? " ▼"
+                                : " ▲"
+                              : ""}
+                          </th>
+                        ))
+                      }
                     </tr>
-                  );
-                })
-              }
-            </tbody>
-          </table>
+                  ))
+                }
+              </thead>
+              {/* Apply the table body props */}
+              <tbody className={classes.tbody} {...getTableBodyProps()}>
+                {
+                  // Loop over the table rows
+                  rows.map((row) => {
+                    // Prepare the row for display
+                    prepareRow(row);
+                    return (
+                      <tr className={classes.trBody} {...row.getRowProps()}>
+                        {row.cells.map((cell) => (
+                          <td className={classes.td} {...cell.getCellProps()}>
+                            {cell.render("Cell")}
+                          </td>
+                        ))}
+                      </tr>
+                    );
+                  })
+                }
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
+
+      <Footer />
       <ToastContainer
         position="bottom-right"
         autoClose={5000}
@@ -184,12 +199,8 @@ function Profit(props) {
         draggable
         pauseOnHover
       />
-        </div>
-        <Footer />
-      </div>
-      
-    );
-  }
-  
-  export default Profit;
-  
+    </>
+  );
+}
+
+export default Profit;

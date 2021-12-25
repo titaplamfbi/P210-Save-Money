@@ -6,7 +6,7 @@ import "./style.scss";
 
 function SelectMonth(props) {
   return (
-    <div style={{ width: "180px" }}>
+    <div className="full-Width">
       <Controller
         render={({ field }) => {
           return (
@@ -16,7 +16,7 @@ function SelectMonth(props) {
                 { value: "albanian", label: "3 Months" },
                 { value: "algerian", label: "6 Months" },
                 { value: "algerian", label: "12 Months" },
-                { value: "algerian", label: "Unlimited deposit" }
+                { value: "algerian", label: "Unlimited deposit" },
               ]}
               onChange={({ value }) => {
                 field.onChange(value);

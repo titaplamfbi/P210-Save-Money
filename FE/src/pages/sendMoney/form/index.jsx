@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState }  from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import PropTypes from "prop-types";
 import "./sendMoney.scss";
 import { useForm } from "react-hook-form";
@@ -8,43 +8,45 @@ import { Link } from "react-router-dom";
 SendMoneyForm.propTypes = {};
 
 function SendMoneyForm(props) {
-  const [userName, setUserName] = useState('');
-  const [Amount, setAmount] = useState('');
+  const [userName, setUserName] = useState("");
+  const [Amount, setAmount] = useState("");
   const [Duaration, setDuation] = useState(30);
 
-  const changeUserName = function(e){
+  const changeUserName = function (e) {
     setUserName(e.target.value);
-  }
+  };
 
-  const changeAmount = function(e){
+  const changeAmount = function (e) {
     setAmount(e.target.value);
-  }
+  };
 
-  const getMonth = function(e){
+  const getMonth = function (e) {
     const value = e.target.value;
     const rsDuaration = +value * 30;
     setDuation(rsDuaration);
-  }
+  };
 
-  const currentUser = JSON.parse(localStorage.getItem('user'));
+  const currentUser = JSON.parse(localStorage.getItem("user"));
   console.log("USER", currentUser);
-  
-  const saveData = async function (){
+
+  const saveData = async function () {
     const data = {
       userID: currentUser._id,
       duration: Duaration + "",
       balanced: Amount,
-      accesstoken: currentUser.jwt
-    }
+      accesstoken: currentUser.jwt,
+    };
 
     const url = "http://localhost:5000/saving/";
-    const response = await axios.post(url, data).catch((err) => console.log(err));
+    const response = await axios
+      .post(url, data)
+      .catch((err) => console.log(err));
     console.log(response);
     if (response) {
       console.log("RSDATA", response);
     }
     document.location.href = "/profit";
-  }
+  };
   return (
     <div className="banner-send">
       <div className="container">
@@ -62,11 +64,23 @@ function SendMoneyForm(props) {
             <form>
               <div>
                 <label for="name"> Name </label>
-                <input type="text" id="name" value={userName} onChange={changeUserName} className="input-sendMoney" />
+                <input
+                  type="text"
+                  id="name"
+                  value={userName}
+                  onChange={changeUserName}
+                  className="input-sendMoney"
+                />
               </div>
               <div>
                 <label for="money"> Amount </label>
-                <input type="text" id="money" value={Amount} onChange={changeAmount} className="input-sendMoney" />
+                <input
+                  type="text"
+                  id="money"
+                  value={Amount}
+                  onChange={changeAmount}
+                  className="input-sendMoney"
+                />
               </div>
               <p className="dropdown-title">How long for:</p>
               <select className="dropdown-select" onChange={getMonth}>
@@ -76,36 +90,10 @@ function SendMoneyForm(props) {
                 <option value="12">12 Months</option>
                 <option value="24">24 Months</option>
               </select>
-              {/* <div className="dropdown" id="lightdropdown">
-                <div className="dropdown-select">
-                  <span className="dropdown-selected">Option Save</span>
-                  <i className="fa fa-angle-down dropdown-caret"></i>
-                </div>
-                <ul className="dropdown-list">
-                  <li className="dropdown-item" data-value="1 Month">
-                    1 Month
-                  </li>
-                  <li className="dropdown-item" data-value="3 Month">
-                    3 Months
-                  </li>
-                  <li className="dropdown-item" data-value="6 Month">
-                    6 Months
-                  </li>
-                  <li className="dropdown-item" data-value="12 Month">
-                    12 Months
-                  </li>
-                  <li className="dropdown-item" data-value="Unlimited deposit">
-                    Unlimited deposit
-                  </li>
-                </ul>
-              </div> */}
-                <input
-                  onClick={saveData}
-                  className="btn-send"
-                  value="Confirm"
-                />
+              <button type="submit" onClick={saveData} className="btn-send">
+                Confirm
+              </button>
               {/* <SelectMonth /> */}
-             
             </form>
           </div>
         </div>

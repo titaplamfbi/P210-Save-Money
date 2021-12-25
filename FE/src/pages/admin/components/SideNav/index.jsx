@@ -106,6 +106,17 @@ function SideNav(props) {
                 <p>Profit</p>
               </NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink
+                activeClassName="active"
+                exact
+                to="/admin/history"
+                className="nav-link"
+              >
+                <i className="nav-icon fas fa-copy" />
+                <p>History</p>
+              </NavLink>
+            </li>
           </ul>
           {/* log out */}
           <div
